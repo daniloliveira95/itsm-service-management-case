@@ -1,4 +1,4 @@
-[🇺🇸 English](README.en-US.md)
+[🇺🇸 English](README.md)
 
 # Case de Gestão de Serviços de TI
 
