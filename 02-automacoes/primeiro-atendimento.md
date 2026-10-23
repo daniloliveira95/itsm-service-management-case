@@ -138,3 +138,39 @@ Cada organização pode adaptar a automação de acordo com:
 O objetivo é estabelecer um comportamento padrão sem impedir a intervenção humana quando o contexto operacional exigir uma decisão diferente.
 
 A configuração final deve ser validada para garantir que as transições automáticas, as exceções e os SLAs funcionem de maneira coerente.
+
+## 11. Implementação demonstrativa
+
+A implementação abaixo foi criada em um ambiente de testes do Jira para demonstrar a estratégia de transição automática dos chamados.
+
+A regra combina um agendamento, uma condição JQL e uma ação de transição de status.
+
+### 11.1. Condição de seleção dos chamados
+
+A condição JQL seleciona chamados do projeto de teste que estejam no status `CRIADO` e sem resolução.
+
+![Condição JQL da automação](automacao-primeiro-atendimento-01.png)
+
+### 11.2. Agendamento da automação
+
+A regra está configurada para execução às 9h, de segunda a sexta-feira, utilizando o fuso horário `America/Sao_Paulo`.
+
+![Agendamento da automação](automacao-primeiro-atendimento-02.png)
+
+### 11.3. Ação de transição
+
+Após a seleção dos chamados elegíveis, a regra executa a transição para o status `Em atendimento`.
+
+![Ação de transição do chamado](automacao-primeiro-atendimento-03.png)
+
+### 11.4. Observações técnicas
+
+Esta implementação demonstra uma estratégia de movimentação automática de chamados em um ambiente de testes.
+
+A execução programada, a condição JQL e a transição de status precisam funcionar em conjunto para produzir o comportamento esperado.
+
+A configuração exibida não comprova, isoladamente, que o SLA começa a contar no momento correto. Esse comportamento depende também da configuração do indicador de SLA e deve ser validado por meio de testes.
+
+A regra apresentada não inclui condições específicas de prioridade. O tratamento de chamados críticos pode exigir exceções adicionais, conforme os requisitos do processo.
+
+As capturas foram produzidas em um ambiente de testes e não devem ser interpretadas como uma reprodução integral da configuração do ambiente profissional original.
