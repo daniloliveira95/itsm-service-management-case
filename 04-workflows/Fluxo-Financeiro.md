@@ -303,6 +303,8 @@ Assim como em Faturamento, a análise envolve documentação e inclusão do sald
 
 A tabela consolida os nomes visíveis no diagrama. A classificação por cor segue a legenda operacional informada para os workflows.
 
+<img width="1604" height="793" alt="image" src="https://github.com/user-attachments/assets/55b736bb-5b4e-48a2-b671-204697617b40" />
+
 | Estado | Classificação no diagrama |
 |---|---|
 | `NOVO` | Entrada |
