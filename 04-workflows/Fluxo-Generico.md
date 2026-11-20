@@ -346,36 +346,8 @@ Portanto, a mudança de status pode ter impacto direto na medição do atendimen
 
 O diagrama abaixo representa os estados e as relações visíveis na configuração apresentada.
 
-```mermaid
-flowchart TD
-    START((Início)) --> CRIADO["CRIADO"]
-    CRIADO --> PRIMEIRO["PRIMEIRO ATENDIMENTO"]
+<img width="1030" height="299" alt="image" src="https://github.com/user-attachments/assets/3ddb31fd-8ab3-49ec-9088-34539f047f56" />
 
-    PRIMEIRO --> APROVACAO["PENDENTE APROVAÇÃO"]
-    APROVACAO --> NAO["NÃO APROVADO"]
-
-    R1["RETORNO 1"]
-    R2["RETORNO 2"]
-    R3["RETORNO 3"]
-    R4["RETORNO 4"]
-
-    P1["AGUARDANDO DEMANDANTE"]
-    P2["PENDENTE OUTRA ÁREA"]
-    P3["PENDENTE TERCEIRIZADO"]
-    P4["ATENDIMENTO AGENDADO"]
-
-    C1["CONCLUÍDO"]
-    C2["CANCELADO"]
-    C3["SEM RESPOSTA"]
-
-    classDef pending fill:#6e7681,color:#ffffff,stroke:#6e7681
-    classDef activity fill:#1f6feb,color:#ffffff,stroke:#1f6feb
-    classDef terminal fill:#238636,color:#ffffff,stroke:#238636
-
-    class CRIADO,APROVACAO,P1,P2,P3,P4 pending
-    class PRIMEIRO,R1,R2,R3,R4 activity
-    class NAO,C1,C2,C3 terminal
-```
 
 > **Nota:** o diagrama acima destaca os estados e o encadeamento inicial identificados na imagem. As transições globais indicadas por `Tudo` não foram desenhadas individualmente para evitar sugerir uma sequência obrigatória entre todos os status. A configuração efetiva das transições deve ser consultada no Jira.
 
