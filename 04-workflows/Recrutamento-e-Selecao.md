@@ -450,109 +450,15 @@ A existência de caminhos de encerramento antecipado evita manter solicitações
 
 Quando o chamado entra em um dos status verdes, o processo é encerrado e o SLA deixa de contar.
 
-O encerramento pode ocorrer antes do consumo integral dos 30 dias úteis. Nesse caso, o processo termina sem necessariamente utilizar toda a meta disponível.
+O encerramento pode ocorrer antes do consumo integral dos 30 dias. Nesse caso, o processo termina sem necessariamente utilizar toda a meta disponível.
 
 ---
 
 ## 9. Diagrama do workflow
 
 O diagrama abaixo representa as etapas e os caminhos identificados na configuração documentada.
+<img width="795" height="720" alt="image" src="https://github.com/user-attachments/assets/e290eef0-ada6-4e44-84c5-2b44fc7e4488" />
 
-```mermaid
-flowchart TD
-    START((Início)) --> CRIADO["CRIADO"]
-
-    CRIADO --> FIN["APROVAÇÃO FINANCEIRO"]
-
-    FIN -->|Orçamento aprovado| BRIEF["BRIEFING"]
-    FIN -->|Orçamento não aprovado| NA["NÃO APROVADO"]
-
-    BRIEF --> VAGA["POSTANDO VAGA"]
-    VAGA --> TRI["TRIAGEM DE CURRÍCULO"]
-
-    TRI --> AGEND["AGENDAMENTO ENTREVISTA"]
-    TRI --> RH["ENTREVISTA RH"]
-
-    AGEND --> RH
-    RH --> GESTOR["ENTREVISTA GESTOR"]
-    GESTOR --> VALID["VALIDAÇÃO DO GESTOR"]
-
-    VALID --> APROV["APROVAÇÃO DO CANDIDATO"]
-    APROV --> DATA["ALINHAR DATA DE INICIO"]
-
-    DATA --> PROP["FORMALIZAÇÃO PROPOSTA"]
-    PROP --> BOAS["E-MAIL BOAS-VINDAS"]
-
-    BOAS --> DOC["PENDENTE DOCUMENTAÇÃO"]
-    DOC --> CENTRAIS["ACIONAR ÁREAS CENTRAIS"]
-
-    CENTRAIS --> ENVIO["ENVIO DE CONTRATO"]
-    ENVIO --> ASS["ASSINATURA CONTRATO"]
-
-    ASS --> CONC["CONCLUÍDO"]
-
-    CRIADO -.-> SEM["SEM RESPOSTA"]
-    FIN -.-> SEM
-    BRIEF -.-> SEM
-    VAGA -.-> SEM
-    TRI -.-> SEM
-    AGEND -.-> SEM
-    RH -.-> SEM
-    GESTOR -.-> SEM
-    VALID -.-> SEM
-    APROV -.-> SEM
-    DATA -.-> SEM
-    PROP -.-> SEM
-    BOAS -.-> SEM
-    DOC -.-> SEM
-    CENTRAIS -.-> SEM
-    ENVIO -.-> SEM
-    ASS -.-> SEM
-
-    CRIADO -.-> CANC["CANCELADO"]
-    FIN -.-> CANC
-    BRIEF -.-> CANC
-    VAGA -.-> CANC
-    TRI -.-> CANC
-    AGEND -.-> CANC
-    RH -.-> CANC
-    GESTOR -.-> CANC
-    VALID -.-> CANC
-    APROV -.-> CANC
-    DATA -.-> CANC
-    PROP -.-> CANC
-    BOAS -.-> CANC
-    DOC -.-> CANC
-    CENTRAIS -.-> CANC
-    ENVIO -.-> CANC
-    ASS -.-> CANC
-
-    CRIADO -.-> CONC
-    FIN -.-> CONC
-    BRIEF -.-> CONC
-    VAGA -.-> CONC
-    TRI -.-> CONC
-    AGEND -.-> CONC
-    RH -.-> CONC
-    GESTOR -.-> CONC
-    VALID -.-> CONC
-    APROV -.-> CONC
-    DATA -.-> CONC
-    PROP -.-> CONC
-    BOAS -.-> CONC
-    DOC -.-> CONC
-    CENTRAIS -.-> CONC
-    ENVIO -.-> CONC
-    ASS -.-> CONC
-
-    classDef pending fill:#6e7681,color:#ffffff,stroke:#6e7681
-    classDef activity fill:#1f6feb,color:#ffffff,stroke:#1f6feb
-    classDef terminal fill:#238636,color:#ffffff,stroke:#238636
-
-    class CRIADO,FIN,AGEND,GESTOR,VALID,APROV,DATA,DOC,ASS pending
-    class BRIEF,VAGA,TRI,RH,PROP,BOAS,CENTRAIS,ENVIO activity
-    class NA,SEM,CANC,CONC terminal
-```
 
 > **Nota de leitura:** as setas tracejadas representam os caminhos globais de encerramento indicados por `Tudo` no diagrama original. O diagrama é uma representação documental do fluxo; não substitui a configuração de transições e permissões no Jira.
 
