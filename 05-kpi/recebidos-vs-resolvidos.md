@@ -41,6 +41,9 @@ Seleciona os chamados cuja data de resolução ocorreu a partir do início de 1�
 
 ## Visualização recomendada
 
+<img width="698" height="495" alt="image" src="https://github.com/user-attachments/assets/9bf4cf65-7773-479f-86ee-e3f466156578" />
+
+
 **Gráfico:** colunas agrupadas.
 
 - **Série 1:** chamados recebidos.
