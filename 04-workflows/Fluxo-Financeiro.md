@@ -303,7 +303,8 @@ Assim como em Faturamento, a análise envolve documentação e inclusão do sald
 
 A tabela consolida os nomes visíveis no diagrama. A classificação por cor segue a legenda operacional informada para os workflows.
 
-<img width="1604" height="793" alt="image" src="https://github.com/user-attachments/assets/55b736bb-5b4e-48a2-b671-204697617b40" />
+<img width="1445" height="771" alt="flow" src="https://github.com/user-attachments/assets/c5d75560-ec14-46a3-83c0-6e131e57c561" />
+
 
 | Estado | Classificação no diagrama |
 |---|---|
@@ -353,7 +354,7 @@ O diagrama apresenta, entre outros, os seguintes rótulos de transição:
 - `Faturado`
 - `Pagamento identificado`
 - `Pg não identificado`
-- `Confirmado Maracanã`
+- `Confirmado`
 - `Tudo`
 
 O rótulo `Tudo` aparece associado a transições para estados de encerramento, como `CANCELADO` e `NF CANCELADA`.
