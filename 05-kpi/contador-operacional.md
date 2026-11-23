@@ -17,6 +17,9 @@ Esse comportamento combina monitoramento quantitativo com acesso direto aos regi
 
 ## Exemplo — Urgente vs. Padrão
 
+<img width="698" height="110" alt="image" src="https://github.com/user-attachments/assets/5d8f0795-a6ea-4299-b452-01ba3fbb1897" />
+
+
 Os números abaixo são ilustrativos e não representam dados reais.
 
 | Contador | Resultado ilustrativo |
