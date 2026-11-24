@@ -35,6 +35,7 @@ As consultas abaixo são propostas parametrizadas para selecionar os chamados re
 resolutiondate >= -90d
 AND priority = "Padrão"
 ```
+<img width="652" height="451" alt="image" src="https://github.com/user-attachments/assets/39866630-205b-4595-9e6a-5e0d73938cec" />
 
 ### Chamados Urgentes
 
@@ -42,6 +43,8 @@ AND priority = "Padrão"
 resolutiondate >= -90d
 AND priority = "Urgente"
 ```
+<img width="652" height="446" alt="image" src="https://github.com/user-attachments/assets/38149f87-ccfe-495d-9f4d-b0b28a77e615" />
+
 
 > **Importante:** a JQL seleciona os chamados resolvidos no intervalo e separados por prioridade. Ela não calcula, por si só, a média entre criação e resolução. O cálculo do tempo de vida e a agregação mensal precisam ser realizados pelo gadget ou pela ferramenta de relatórios, utilizando as datas `created` e `resolutiondate`.
 
@@ -92,6 +95,7 @@ resolutiondate >= -90d
 AND priority = "Padrão"
 AND "SLA Primeiro Atendimento" = completed()
 ```
+<img width="698" height="464" alt="image" src="https://github.com/user-attachments/assets/4e84b353-884c-4f69-bbb6-a3a7e8b32eff" />
 
 ### Chamados Urgentes
 
@@ -100,6 +104,7 @@ resolutiondate >= -90d
 AND priority = "Urgente"
 AND "SLA Primeiro Atendimento" = completed()
 ```
+<img width="698" height="465" alt="image" src="https://github.com/user-attachments/assets/634162dc-b428-4aa5-9708-402b70ee1b97" />
 
 > **Importante:** a condição `completed()` seleciona SLAs concluídos. Ela não garante, isoladamente, que o SLA foi cumprido dentro da meta. Para separar atendimentos dentro e fora do prazo, é necessário consultar também o estado `breached()` e confirmar como o gadget utilizado calcula a média.
 >
